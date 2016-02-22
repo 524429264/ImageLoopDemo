@@ -33,7 +33,6 @@
 {
     HADirect *direct = [HADirect direcWithtFrame:CGRectMake(0, 20, SCREENWIDTH, 250) ImageArr:self.images AndImageClickBlock:nil];
     [self.view addSubview:direct];
-    [direct beginTimer];
 }
 
 - (void)test2
@@ -41,8 +40,8 @@
     HADirect *direct = [HADirect direcWithtFrame:CGRectMake(0, 300, SCREENWIDTH, 250) ImageArr:self.images AndImageClickBlock:^(NSInteger index) {
         NSLog(@"当前是第%ld页图片",index);
     }];
+    direct.time = 2;
     [self.view addSubview:direct];
-    [direct beginTimer];
 }
 
 
